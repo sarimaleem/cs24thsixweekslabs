@@ -36,6 +36,9 @@ public class GraphicBinaryTree extends JPanel {
 
         Graphics2D graphics2D = (Graphics2D)graphics;
 
+        graphics2D.setColor(new Color(212,175,55));
+        graphics2D.fillRect(0, 0, 1920, 1080);
+
         graphics2D.setColor(Color.BLACK);
 
 
@@ -54,12 +57,12 @@ public class GraphicBinaryTree extends JPanel {
 
         int y = level * yFactor;
 
-        graphics2D.setColor((new Color(0, 255, 0,  50)).darker());
+        graphics2D.setColor((new Color(0, 255, 0,  255)).darker());
         graphics2D.fillOval(x-12, y-27, 40, 40);
         graphics2D.setColor(Color.black);
 
         System.out.println(graphicBinaryNode.getValue());
-        graphics2D.setFont(new Font("times", 15, 15));
+        graphics2D.setFont(new Font("times", Font.BOLD,  15));
         String formatted = String.format("%02d", graphicBinaryNode.getValue());
         graphics2D.drawString(formatted, x, y);
 
