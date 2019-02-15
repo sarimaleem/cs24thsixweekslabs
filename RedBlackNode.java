@@ -4,6 +4,7 @@ public class RedBlackNode {
     String value;
     RedBlackNode left;
     RedBlackNode right;
+    RedBlackNode parent;
 
     public RedBlackNode(String value) {
         color = "red";
@@ -41,5 +42,31 @@ public class RedBlackNode {
 
     public RedBlackNode getRight() {
         return right;
+    }
+
+    public void setParent(RedBlackNode parent) {
+        this.parent = parent;
+    }
+
+    public RedBlackNode getParent() {
+        return parent;
+    }
+
+    public RedBlackNode getGrandParent() {
+        return getParent().getParent();
+    }
+
+    public RedBlackNode getSibling() {
+        if (getParent().getLeft() == this)
+            return getParent().getRight();
+        return getParent().getLeft();
+    }
+
+    public RedBlackNode getUncle() {
+        return getParent().getSibling();
+    }
+
+    public String toString() {
+        return "Value: " + getValue() + getColor();
     }
 }
